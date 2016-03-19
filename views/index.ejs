@@ -1,5 +1,7 @@
 <% include partials/header.ejs %>
-    <% if (!user){ %>
+
+<div class="container">
+    <% if(!user) { %>
         <a href="/login">Login</a>
         <br>
         or
@@ -7,9 +9,12 @@
         <a href="/register">Register</a>
     <% } %>
     <br>
-    <% if (user) { %>
-        <p>Login as <%=user%></p>
-        <a href="/logout">Log out</a>
+    <% if(user) { %>
+        <p>You are currently logged in as <%=user.username %></p>
+        <a href="/logout">Logout</a>
     <% } %>
+</div>
+
+
 
 <% include partials/footer.ejs %>
